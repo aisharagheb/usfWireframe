@@ -1,15 +1,16 @@
 <header class="header navbar navbar-inner">
-    <nav tolerance='20' offset='200' class="navbar navbar-default navbar-fixed-top" role="navigation" headroom>
+    <nav tolerance='20' offset='200' class="navbar navbar-default" role="navigation">
         <section>
             <div class="container">
-                <ul class="nav navbar-nav pull-left">
+                <ul class="nav navbar-nav pull-left ">
+
                     <li class="back animated fadeInLeft" ng-class="{'ng-hide': isActive('catalog')}">
-                        <a href back-step class="back">
+                        <a href back-step class="back ">
                             <i class="fa fa-arrow-left"></i>
                         </a>
                     </li>
                     <li class="products" ng-class="{'active': isInPath('catalog') || isInPath('product') || isInPath('cart/default') || isInPath('search')}">
-                        <a id="451qa_home_link" ng-show="Four51User.isAuthenticated()" href="catalog">
+                        <a id="451qa_home_link" ng-show="Four51User.isAuthenticated()" href="catalog" >
                             <i class="fa fa-home"></i>
                             <span class="hidden-xs">{{'Products' | rc | xlat}}</span>
                         </a>
@@ -26,8 +27,8 @@
                             <span class="hidden-xs">{{'Reports' | r | xlat}}</span>
                         </a>
                     </li>
-                    <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
-                        <a id="451qa_acct_link" href="admin" class="hidden-md hidden-lg">
+                    <li class="hidden-md hidden-lg" ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
+                        <a id="451qa_acct_link" href="admin">
                             <i class="fa fa-cog"></i>
                             <span class="hidden-xs">{{'Account' | r | xlat}}</span>
                         </a>
@@ -84,6 +85,9 @@
                             </li>
                         </ul>
                     </li>
+                    <li style="max-width: 300px;">
+                        <productsearchinput></productsearchinput>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
                     <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
@@ -97,12 +101,57 @@
             </div>
         </section>
     </nav>
-    <nav class="dropdown-mega">
-        <a class="dropdown-toggle text-center" data-toggle="dropdown">
-            <i class="fa fa-angle-down text-primary"></i>
-        </a>
-        <ul class="451qa_topnav dropdown-menu" >
-            <categorytree tree='tree' current='currentCategory' />
-        </ul>
-    </nav>
+    <!--<nav class="dropdown-mega">-->
+        <!--<a class="dropdown-toggle text-center" data-toggle="dropdown">-->
+            <!--<i class="fa fa-angle-down text-primary"></i>-->
+        <!--</a>-->
+        <!--<ul class="451qa_topnav dropdown-menu" >-->
+            <!--<categorytree tree='tree' current='currentCategory' />-->
+        <!--</ul>-->
+    <!--</nav>-->
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="catalog">
+                    <figure>
+                        <img class="img-responsive" ng-src="{{user.CustomFields[0].File.Url}}"/>
+                    </figure>
+                </a>
+            </div>
+            <div class="col-lg-7 col-md-9">
+                <div class="us-foods-nav">
+                    <div>
+                        <a href="#">MID</a>
+                    </div>
+                    <div>
+                        <a href="#">Analytics</a>
+                    </div>
+                    <div>
+                        <a href="#">Admin</a>
+                    </div>
+                    <div>
+                        <a href="#">Help</a>
+                    </div>
+                </div>
+                <div class="us-foods-nav green">
+                    <div>
+                        <a href="#">PRINT</a>
+                    </div>
+                    <div>
+                        <a href="#">BRANDED MERCHANDISE</a>
+                    </div>
+                    <div>
+                        <a href="#">LAUNCH KITS</a>
+                    </div>
+                    <div>
+                        <a href="news">LAUNCH CALENDAR</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </header>
+
